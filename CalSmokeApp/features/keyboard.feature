@@ -7,6 +7,12 @@ Feature: Typing on the Keyboard
   Background:  Get me to the first tab
     Given I see the first tab
 
+  Scenario: I should be able to press a key by name
+    When I touch the text field
+    Then I type "123"
+    Then I press the "delete.key" key
+    Then the text should be "12"
+
   @travis
   Scenario: I should be able to type something
     Then I type "Hello"
